@@ -15,7 +15,7 @@ command_bundler () {
     RAILS_ENV=$APP_ENV bundler install
   else
     echo ":: Gemfile not found"
-    exit 1
+    echo ":: => bundle install skipped"
   fi
 }
 
@@ -31,7 +31,7 @@ command_run () {
   fi
 
   RAILS_ENV=$APP_ENV bundler exec puma -d -C /etc/docker-container/puma.rb
-  
+
   nginx
 
   exit 0
@@ -48,7 +48,7 @@ if [ "$APP_BUNDLE" != "n" ]; then
   command_bundler
 fi
 
-case "$1" in 
+case "$1" in
   assets)
     command_assets
   ;;
