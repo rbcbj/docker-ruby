@@ -1,0 +1,4 @@
+#!/bin/bash
+
+APP_ENV=${APP_ENV:-"production"}
+APP_BUNDLE=${APP_BUNDLE:-"y"}
