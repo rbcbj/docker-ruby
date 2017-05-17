@@ -30,10 +30,9 @@ RUN apt-get install -y --force-yes build-essential curl git \
 # libcurl3-dev
 
 # Compile ruby from scratch
-ADD rubies/ruby-$RUBY_VERSION.tar.gz /tmp/
-ADD rubies/ruby-$RUBY_VERSION.sh     /tmp/
+ADD rubies/ruby-$RUBY_VERSION.*   /tmp/
 RUN chmod +x /tmp/ruby-$RUBY_VERSION.sh \
- && sync \ 
+ && sync \
  && /tmp/ruby-$RUBY_VERSION.sh
 
 COPY assets/gemrc /etc/gemrc
