@@ -51,8 +51,8 @@ COPY assets/env-defaults          /etc/docker-container/env-defaults
 COPY assets/puma.rb               /etc/docker-container/puma.rb
 COPY assets/entrypoint            /usr/bin/
 
+VOLUME ["/var/www", "/usr/local/bundle"]
 EXPOSE 3000
-
 WORKDIR $APP_HOME
 ENTRYPOINT ["/usr/bin/entrypoint"]
 CMD ["run"]

@@ -18,6 +18,7 @@ Commands:
 Volumes:
 
 * `/var/www` application path
+* `/usr/local/bundle` bundler cache
 
 ## Rubies available
 
